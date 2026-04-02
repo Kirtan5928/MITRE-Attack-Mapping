@@ -1,0 +1,11 @@
+{
+  "T1566": "Implement phishing awareness training and deploy secure email gateways to detect malicious emails.",
+  "T1204.001": "Educate users to avoid clicking unknown links and enforce URL filtering.",
+  "T1059.001": "Restrict PowerShell usage, enable logging, and monitor script execution.",
+  "T1003.001": "Protect LSASS memory, enable credential guard, and monitor access attempts.",
+  "T1053.005": "Audit scheduled tasks regularly and restrict unauthorized task creation.",
+  "T1021.001": "Restrict RDP access using firewalls and enforce multi-factor authentication.",
+  "T1071.004": "Monitor DNS traffic and detect anomalies such as tunneling behavior.",
+  "T1041": "Monitor outbound traffic and restrict unauthorized data exfiltration channels.",
+  "T1567": "Use DLP solutions and monitor cloud uploads for sensitive data."
+}
