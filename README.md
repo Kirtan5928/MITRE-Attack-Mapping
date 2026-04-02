@@ -142,32 +142,17 @@ It simulates real-world SOC (Security Operations Center) workflows by providing:
 
 
 
-\## 📊 Dashboard Preview
+## 📊 Dashboard Preview
 
 
 
-> Add screenshots here after pushing 👇
+## 📊 Dashboard Preview
 
+![Input](https://raw.githubusercontent.com/Kirtan5928/MITRE-Attack-Mapping/main/input.png)
 
+![Results](https://raw.githubusercontent.com/Kirtan5928/MITRE-Attack-Mapping/main/results.png)
 
-```
-
-\## 📊 Dashboard Preview
-
-
-
-!\[Input](https://raw.githubusercontent.com/Kirtan5928/MITRE-Attack-Mapping/main/input.png)
-
-!\[Results](results.png)
-
-!\[Graph](graph.png)
-
-```
-
-
-
-\---
-
+![Graph](https://raw.githubusercontent.com/Kirtan5928/MITRE-Attack-Mapping/main/graph.png)
 
 
 \## 🛠️ Tech Stack
