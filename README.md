@@ -156,7 +156,7 @@ It simulates real-world SOC (Security Operations Center) workflows by providing:
 
 
 
-!\[Input](input.png)
+!\[Input](https://raw.githubusercontent.com/Kirtan5928/MITRE-Attack-Mapping/main/input.png)
 
 !\[Results](results.png)
 
