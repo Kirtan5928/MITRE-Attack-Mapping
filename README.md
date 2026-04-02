@@ -144,10 +144,6 @@ It simulates real-world SOC (Security Operations Center) workflows by providing:
 
 ## 📊 Dashboard Preview
 
-
-
-## 📊 Dashboard Preview
-
 ![Input](https://raw.githubusercontent.com/Kirtan5928/MITRE-Attack-Mapping/main/input.png)
 
 ![Results](https://raw.githubusercontent.com/Kirtan5928/MITRE-Attack-Mapping/main/results.png)
