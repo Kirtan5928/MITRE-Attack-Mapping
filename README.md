@@ -1,271 +1,133 @@
-\# 🛡️ CyberShield – MITRE ATT\&CK Mapping Framework
+# 🛡️ CyberShield – MITRE ATT&CK Mapping Framework
 
+## Overview
 
+CyberShield is a simple tool I built to understand how real-world threat descriptions can be mapped to the MITRE ATT&CK framework.
 
-\## 🚀 Overview
+The idea behind the project was to simulate a basic SOC workflow — where logs or alerts come in, and we try to identify what kind of attack techniques are being used.
 
+Given a piece of text (like a security alert or incident description), the system analyzes it and returns:
 
+* Relevant MITRE ATT&CK techniques
+* Associated tactics
+* A confidence score
+* A short explanation of why it was matched
+* Suggested remediation steps
 
-CyberShield is an automated threat analysis framework that maps security logs and threat descriptions to \*\*MITRE ATT\&CK techniques, tactics, and sub-techniques\*\*.
+---
 
+## Why I built this
 
+While learning cybersecurity, I noticed that the MITRE ATT&CK framework is widely used, but manually mapping alerts to techniques can be repetitive and time-consuming.
 
-It simulates real-world SOC (Security Operations Center) workflows by providing:
+I wanted to build something that:
 
+* Automates this mapping process
+* Gives a quick overview of an attack scenario
+* Is simple enough to experiment with and improve
 
+This project helped me better understand how threat detection and analysis actually works in practice.
 
-\* Intelligent detection
+---
 
-\* Explainable results
+## How it works
 
-\* Actionable remediation
+1. The user enters a threat description or log data
+2. The text is cleaned and converted to lowercase
+3. Each MITRE technique is compared against the input using:
 
-\* Clean visualization dashboard
+   * Keyword matching
+   * Context similarity (using SequenceMatcher)
+4. A score is assigned based on how well it matches
+5. The top techniques are selected and filtered to avoid duplicates
+6. Each result is enriched with:
 
+   * Explanation (matched keywords or similarity reasoning)
+   * Remediation (based on technique or tactic)
+7. Results are displayed in a dashboard along with a small visualization
 
+---
 
-\---
+## Features
 
+* Maps text to MITRE ATT&CK techniques and tactics
+* Confidence scoring based on match strength
+* Explanation for each detected technique
+* Basic remediation suggestions
+* Clean Streamlit dashboard
+* Tactic distribution graph for quick analysis
+* Option to export results as a JSON layer (for ATT&CK Navigator)
 
+---
 
-\## 🎯 Key Features
-
-
-
-\* 🔍 \*\*Automated MITRE ATT\&CK Mapping\*\*
-
-
-
-&#x20; \* Detects techniques, tactics, and sub-techniques from input logs/descriptions
-
-
-
-\* 🧠 \*\*Hybrid Detection Engine\*\*
-
-
-
-&#x20; \* Combines keyword-based matching with contextual similarity scoring
-
-
-
-\* 📊 \*\*Confidence Scoring System\*\*
-
-
-
-&#x20; \* Dynamic, normalized confidence (60–95% realistic range)
-
-
-
-\* 💡 \*\*Explainable Results\*\*
-
-
-
-&#x20; \* Shows why a technique was detected
-
-
-
-\* 🛡️ \*\*Remediation Suggestions\*\*
-
-
-
-&#x20; \* Technique-aware and tactic-based security recommendations
-
-
-
-\* 📈 \*\*Tactic Distribution Visualization\*\*
-
-
-
-&#x20; \* Clean dark-themed graph showing attack phase distribution
-
-
-
-\* 📥 \*\*MITRE ATT\&CK Navigator Export\*\*
-
-
-
-&#x20; \* Generate JSON layer for visualization in ATT\&CK Navigator
-
-
-
-\* 🎨 \*\*Modern Dashboard\*\*
-
-
-
-&#x20; \* Built with Streamlit
-
-&#x20; \* Minimal, clean, and user-friendly UI
-
-
-
-\---
-
-
-
-\## 🧠 How It Works
-
-
-
-1\. User inputs a threat description or security log
-
-2\. Text is preprocessed and normalized
-
-3\. Detection engine applies:
-
-
-
-&#x20;  \* Keyword matching
-
-&#x20;  \* Contextual similarity (SequenceMatcher)
-
-4\. Techniques are scored and ranked
-
-5\. Duplicate techniques are filtered (parent-level deduplication)
-
-6\. Final output includes:
-
-
-
-&#x20;  \* Technique
-
-&#x20;  \* Tactic
-
-&#x20;  \* Confidence
-
-&#x20;  \* Explanation
-
-&#x20;  \* Remediation
-
-
-
-\---
-
-
-
-## 📊 Dashboard Preview
+## Dashboard Preview
 
 ![Input](https://raw.githubusercontent.com/Kirtan5928/MITRE-Attack-Mapping/main/input.png)
-
 ![Results](https://raw.githubusercontent.com/Kirtan5928/MITRE-Attack-Mapping/main/results.png)
-
 ![Graph](https://raw.githubusercontent.com/Kirtan5928/MITRE-Attack-Mapping/main/graph.png)
 
+---
 
-\## 🛠️ Tech Stack
+## Tech Stack
 
+* Python
+* Streamlit
+* MITRE ATT&CK STIX dataset
+* Matplotlib
 
+---
 
-\* \*\*Python\*\*
-
-\* \*\*Streamlit\*\* (UI Dashboard)
-
-\* \*\*MITRE ATT\&CK STIX Dataset\*\*
-
-\* \*\*Matplotlib\*\* (Visualization)
-
-\* \*\*JSON\*\*
-
-
-
-\---
-
-
-
-\## ▶️ How to Run
-
-
+## How to run
 
 ```bash
-
 pip install -r requirements.txt
-
 streamlit run app.py
-
 ```
 
+---
 
-
-\---
-
-
-
-\## 📁 Project Structure
-
-
+## Project structure
 
 ```
-
 CyberShield/
-
 │
-
 ├── app.py                  # Streamlit dashboard
-
-├── mapper.py               # Core detection logic
-
-├── remediation.json        # Remediation mapping
-
-├── enterprise-attack.json  # MITRE ATT\&CK dataset
-
+├── mapper.py               # Core mapping logic
+├── remediation.json        # Remediation data
+├── enterprise-attack.json  # MITRE ATT&CK dataset
 ├── requirements.txt
-
 └── README.md
-
 ```
 
+---
 
+## What I learned
 
-\---
+* How the MITRE ATT&CK framework is structured and used
+* How to design a simple detection pipeline
+* Balancing accuracy vs simplicity in rule-based systems
+* Building clean dashboards using Streamlit
+* Structuring a project so it’s easy to understand and extend
 
+---
 
+## Limitations
 
-\## 🔮 Future Improvements
+* The mapping is rule-based (not ML-based), so it may miss nuanced cases
+* Input is manual (no log ingestion yet)
+* Confidence scores are heuristic, not probabilistic
 
+---
 
+## Future improvements
 
-\* 📂 Log file upload (real SIEM-style input)
+* Add log file upload support
+* Use embeddings or NLP models for better matching
+* Improve remediation with more context-aware suggestions
+* Deploy as a web app
 
-\* 🤖 LLM-based explanation generation
+---
 
-\* 🧠 Advanced NLP (embeddings / transformers)
-
-\* 📊 Attack timeline visualization
-
-\* 🌐 API integration for SOC tools (Splunk, ELK)
-
-
-
-\---
-
-
-
-\## 📌 Use Cases
-
-
-
-\* SOC Analyst training
-
-\* Threat detection simulation
-
-\* Cybersecurity portfolio project
-
-\* MITRE ATT\&CK exploration
-
-
-
-\---
-
-
-
-\## 👨‍💻 Author
-
-
+## Author
 
 Kirtan J Gowda
-
-
-
-\---
-
-
-
