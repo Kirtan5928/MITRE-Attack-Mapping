@@ -13,7 +13,7 @@ st.set_page_config(page_title="CyberShield", page_icon="🛡️", layout="wide")
 # Header
 # -------------------------------
 st.markdown("""
-# 🛡️ CyberShield  
+# CyberShield Project 
 ### MITRE ATT&CK Mapping Framework
 """)
 
@@ -23,7 +23,7 @@ st.markdown("---")
 # -------------------------------
 # Input Section
 # -------------------------------
-st.subheader("🔍 Analyze Threat")
+st.subheader("Analyze Threat")
 
 description = st.text_area(
     "Threat Input",
@@ -52,7 +52,7 @@ if analyze:
         if results:
             top = results[0]
             st.markdown(f"""
-            ### 🚨 Top Detection
+            ### Top Detection
             **{top['technique_id']} — {top['name']}**  
             Confidence: **{top['confidence']}%**
             """)
@@ -61,7 +61,7 @@ if analyze:
         # -------------------------------
         # Results Section
         # -------------------------------
-        st.subheader("📋 Detected Techniques")
+        st.subheader("Detected Techniques")
 
         if results:
             for r in results:
@@ -117,7 +117,7 @@ if analyze:
             counts = list(tactic_counts.values())
 
             # Create dark themed plot
-            fig, ax = plt.subplots(figsize=(6, 3))
+            fig, ax = plt.subplots(figsize=(4, 2))
 
             fig.patch.set_facecolor('#0E1117')
             ax.set_facecolor('#0E1117')
@@ -144,7 +144,7 @@ if analyze:
         # -------------------------------
         # JSON Export
         # -------------------------------
-        st.subheader("📥 Export Results")
+        st.subheader("Export Results")
 
         layer = {
             "name": "CyberShield Layer",
